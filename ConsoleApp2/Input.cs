@@ -18,19 +18,18 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Gets text input from the keyboard
         public string manualTextInput()
         {
-            string manualText = Console.ReadLine();
-            return manualText;
+            text = Console.ReadLine();
+            return text;
         }
 
         //Method: fileTextInput
         //Arguments: string (the file path)
         //Returns: string
         //Gets text input from a .txt file
-        public string fileTextInput(string fileName)
+        public string fileTextInput()
         {
-            fileName = File.ReadAllText(@"C: \Users\40006088\OneDrive - DN Colleges Group\Uni Work\OOP file.txt");
+            text = File.ReadAllText(@"C: \Users\40006088\OneDrive - DN Colleges Group\Uni Work\OOP file.txt");//cannot find the file
             return text;
         }
-
     }
 }

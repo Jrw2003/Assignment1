@@ -18,8 +18,24 @@ namespace CMP1903M_Assessment_1_Base_Code
             //Get either manually entered text, or text from a file
             Input input = new Input();
             Console.WriteLine("Do you want to manually input a sentence or use the already created text file?(write manually or textfile)");
-            if 
-            Console.WriteLine(input.manualTextInput());
+            string choose = Console.ReadLine();
+            if (choose == "manually")
+            {
+                Console.WriteLine(input.manualTextInput());
+            }    
+            else
+            {
+                if (choose == "textfile")
+                {
+                    Console.WriteLine(input.fileTextInput());
+                }   
+                else
+                {
+                    Console.WriteLine("Error you did choose on of the choices");
+                }
+            }
+                
+                    
 
 
             //Create an 'Analyse' object
