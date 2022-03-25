@@ -17,31 +17,29 @@ namespace CMP1903M_Assessment_1_Base_Code
             //Create 'Input' object
             //Get either manually entered text, or text from a file
             Input input = new Input();
-            Console.WriteLine("Do you want to manually input a sentence or use the already created text file?(write manually or textfile)");
-            string choose = Console.ReadLine();
-            if (choose == "manually")
+            Console.WriteLine("Do you want to manually input a peace of text or use the already created text file?(write manually or textfile)");// this asks the user to choose between inputting manually or using a prewritten text file
+            string choose = Console.ReadLine(); // this allows the user to choose between inputting manually or using a prewritten text file
+            if (choose == "manually")// if the user input "manually" then this piece of code will run
             {
                 Console.WriteLine(input.manualTextInput());
+                string text = input.manualTextInput();
             }    
             else
             {
-                if (choose == "textfile")
+                if (choose == "textfile")// if the user input "textfile" then this piece of code will run
                 {
                     Console.WriteLine(input.fileTextInput());
-                }   
-                else
+                    string text = input.manualTextInput();
+                }
+                else// if the user input anything other than "manually" or "textfile" then this piece of code will run
                 {
-                    Console.WriteLine("Error you did choose on of the choices");
+                    Console.WriteLine("Error you did choose one of the two choices.");
                 }
             }
-                
-                    
-
-
             //Create an 'Analyse' object
             //Pass the text input to the 'analyseText' method
-
-
+            Analyse analyse = new Analyse();
+            Console.WriteLine(analyse.analyseText(text));
             //Receive a list of integers back
 
 

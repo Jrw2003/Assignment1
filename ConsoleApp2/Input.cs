@@ -18,7 +18,8 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Gets text input from the keyboard
         public string manualTextInput()
         {
-            text = Console.ReadLine();
+            Console.WriteLine("what would you like to input?");
+            text = Console.ReadLine();// this allows the user to input any piece of text they like
             return text;
         }
 
@@ -28,8 +29,25 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Gets text input from a .txt file
         public string fileTextInput()
         {
-            text = File.ReadAllText(@"C: \Users\40006088\OneDrive - DN Colleges Group\Uni Work\OOP file.txt");//cannot find the file
+            String[] lines = File.ReadAllLines(@"C:\Users\Josh-\Downloads\OOP file.txt");
+            String[] parts = new String[] { };
+            foreach (string line in lines)
+            {
+                parts = line.Split('*');//this makes it so as soon as it sees an "*" it will stop reading the rest of the text file
+                if (parts.Length > 1)
+                {
+                    break;
+                }
+                Console.WriteLine(line);
+            }
+            foreach (string part in parts)
+            {
+                Console.WriteLine(part);
+                text = part;
+            }
+
             return text;
         }
     }
 }
+//C:\Users\40006088\OneDrive - DN Colleges Group\Uni Work\OOP file.txt //this if my loaction of the text file while at uni
