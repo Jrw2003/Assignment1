@@ -29,7 +29,7 @@ namespace CMP1903M_Assessment_1_Base_Code
         //Gets text input from a .txt file
         public string fileTextInput()
         {
-            String[] lines = File.ReadAllLines(@"C:\Users\Josh-\Downloads\OOP file.txt");
+            String[] lines = File.ReadAllLines(@"C:\Users\Josh-\Downloads\OOP file.txt");//i dont understand where to put the file so the file address doesnt have to change from person to person
             String[] parts = new String[] { };
             foreach (string line in lines)
             {
